@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/mycss.css" />
     <link rel="stylesheet" href="assets/css/tailwind.css" />
+
+    <!-- for email submission form -->
+    <script type="text/javascript">
+        var submitted = false;
+    </script>
 </head>
 
 <body class="is-preload">
@@ -373,13 +378,6 @@
                     action="https://docs.google.com/forms/d/e/1FAIpQLSdw2V1P1AXLcFUZuP8C3VjrwD37KlyP7-1VhE9xNgk8qzRWfQ/formResponse?"
                     target="hidden_iframe" onsubmit="submitted=true;", method="POST"> -->
 
-                <!-- Scripts -->
-                <!-- for email submission form -->
-                <script src="assets/js/jquery.min.js"></script>
-                <script type="text/javascript">
-                    var submitted = false;
-                </script>
-
                 <form name="gform" id="gform" enctype="text/plain" target="hidden_iframe"
                     onsubmit="submitted=true; postIt();" , method="post">
                     <div class="row">
@@ -418,7 +416,7 @@
     </div>
 
     <!-- Scripts -->
-    <!-- <script src="assets/js/jquery.min.js"></script> -->
+    <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.scrolly.min.js"></script>
     <script src="assets/js/jquery.scrollex.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
