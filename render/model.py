@@ -1,11 +1,13 @@
+"""Mostly helper functions to help with the driver."""
 import json
 import os
 import pathlib
-import arrow # type: ignore
 import sqlite3
+import arrow  # type: ignore
 
 
 def sql_db():
+    """Open a SQL connection and perform a query."""
     db_path = pathlib.Path(os.getcwd())
     db_path = pathlib.Path(db_path/'sql'/'portfolio.sqlite3')
     con = sqlite3.connect(str(db_path))
@@ -21,6 +23,7 @@ def sql_db():
 
 
 def create_json():
+    """Create a context JSON file to render to jinja."""
     skills_db = sql_db()
     skills = []
     for skill_db in skills_db:
@@ -46,6 +49,7 @@ def create_json():
 
 
 def get_time(db_time):
+    """Calculate the time difference from now to start time in database."""
     now = arrow.now().format("YYYY-MM-DD")
     arr_now = now.split('-')
     arr_time = db_time.split('-')
@@ -61,8 +65,6 @@ def get_time(db_time):
         if time_diff[0] == 1:
             return f'{time_diff[0]} year'
         return f'{time_diff[0]} years'
-    # year is 0
-    else:
-        if time_diff[1] == 1:
-            return f'{time_diff[1]} month'
-        return f'{time_diff[1]} months'
+    if time_diff[1] == 1:
+        return f'{time_diff[1]} month'
+    return f'{time_diff[1]} months'

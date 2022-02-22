@@ -14,4 +14,4 @@ sqlite3 sql/portfolio.sqlite3 < sql/schema.sql
 sqlite3 sql/portfolio.sqlite3 < sql/data.sql
 
 # run python file
-python3 render/render.py
+python3 render/__main__.py

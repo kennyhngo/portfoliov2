@@ -8,11 +8,6 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/mycss.css" />
     <link rel="stylesheet" href="assets/css/tailwind.css" />
-
-    <!-- for email submission form -->
-    <script type="text/javascript">
-        var submitted = false;
-    </script>
 </head>
 
 <body class="is-preload">
@@ -215,7 +210,7 @@
                     target="hidden_iframe" onsubmit="submitted=true;", method="POST"> -->
 
                 <form name="gform" id="gform" enctype="text/plain" target="hidden_iframe"
-                    onsubmit="submitted=true; postIt();" , method="post">
+                    onsubmit="submitted=true; postIt();" method="post">
                     <div class="row">
                         <div class="col-6 col-12-mobile"><input type="text" name="entry.1689097801"
                                 id="entry.1689097801" placeholder="Name" required />
@@ -225,15 +220,15 @@
                         </div>
                         <div class="col-12">
                             <textarea name="entry.307990038" id="entry.307990038" placeholder="Message"
-                                required /></textarea>
+                                required ></textarea>
                         </div>
                         <div class="col-12">
                             <input type="submit" value="Submit" />
                         </div>
                     </div>
                 </form>
-                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
-                    onload="if(submitted) {}"></iframe>
+                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+                <!-- onload="if(submitted) {}" -->
 
             </div>
         </section>
@@ -261,6 +256,9 @@
     <script src="assets/js/main.js"></script>
 
     <!-- for email submission form -->
+    <script type="text/javascript">
+        var submitted = false;
+    </script>
     <script type="text/javascript">
         $('#gform').on('submit', function (e)
         {

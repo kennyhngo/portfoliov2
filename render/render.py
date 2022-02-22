@@ -1,13 +1,13 @@
-from distutils.dir_util import copy_tree
+"""Main driver of the program - renders HTML using jinja."""
 import json
 import os
 import pathlib
-import sys
-from model import create_json
 from jinja2 import Environment, FileSystemLoader, select_autoescape
+from model import create_json  # pylint: disable=import-error
 
 
 def parse_json():
+    """Parse information from a JSON file."""
     input_dir = os.getcwd()
     input_dir = pathlib.Path(input_dir)
     template_dir = input_dir/'templates'
@@ -28,6 +28,7 @@ def parse_json():
 
 
 def setup():
+    """Prepare the templates and context."""
     input_dir = os.getcwd()
     input_dir = pathlib.Path(input_dir)
     template_list, context_list, env = parse_json()
@@ -39,11 +40,3 @@ def setup():
 
         with open(output_path, 'w', encoding='utf-8') as file:
             file.write(html_template)
-
-
-def main():
-    setup()
-
-
-if __name__ == "__main__":
-    main()
