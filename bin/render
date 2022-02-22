@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Stop when errors occur
+set -Eeuo pipefail
+set -x
+
+# remove index.html and context.json file
+rm -rf index.html
+rm -rf render/context.json
+
+# Reset database and create it
+rm -rf sql/portfolio.sqlite3
+sqlite3 sql/portfolio.sqlite3 < sql/schema.sql
+sqlite3 sql/portfolio.sqlite3 < sql/data.sql
+
+# run python file
+python3 render/render.py

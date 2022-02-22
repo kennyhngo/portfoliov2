@@ -1,0 +1,267 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Kenny's Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/mycss.css" />
+    <link rel="stylesheet" href="assets/css/tailwind.css" />
+</head>
+
+<body class="is-preload">
+
+    <!-- Header -->
+    <div id="header">
+        <div class="top">
+            <!-- Logo -->
+            <div id="logo">
+                <span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
+                <h1 id="title"><a href="/projects/todoList/todo.html">Kenny Ngo</a></h1>
+                <p>3rd Year Student</p>
+                <p>University of Michigan</p>
+                <p>Ann Arbor, Michigan</p>
+            </div>
+
+            <!-- Nav -->
+            <nav id="nav">
+                <ul>
+                    <li><a href="#top" id="top-link"><span class="icon solid fa-home">Intro</span></a></li>
+                    <li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-th">Portfolio</span></a>
+                    </li>
+                    <li><a href="#about" id="about-link"><span class="icon solid fa-user">About Me</span></a></li>
+                    <li><a href="#contact" id="contact-link"><span class="icon solid fa-envelope">Contact</span></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="bottom">
+            <!-- Social Icons -->
+            <ul class="icons">
+                <!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li> -->
+                <!-- <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li> -->
+                <li><a href="https://www.linkedin.com/in/kenny-ngo-534b71172/" class="icon brands fa-linkedin"><span
+                            class="label">LinkedIn</span></a></li>
+                <li><a href="https://github.com/kennyngod" class="icon brands fa-github"><span
+                            class="label">Github</span></a></li>
+                <!-- <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li> -->
+                <!-- <li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li> -->
+                <li><a href="/resources/resume.txt" class="icon fa-solid fa-file"><span class="label">Resume</span></a>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- Main -->
+    <div id="main">
+
+        <!-- Intro -->
+        <section id="top" class="one dark cover">
+            <div class="container">
+
+                <header>
+                    <h2 class="alt">Hi! I'm <strong>Kenny Ngo</strong></h2>
+                    <p>3rd Year Student studying Data Science and Applied Mathematics</p>
+                </header>
+
+                <footer>
+                    <a href="#portfolio" class="button scrolly">Portfolio</a>
+                </footer>
+
+            </div>
+        </section>
+
+        <!-- Portfolio -->
+        <section id="portfolio" class="two">
+            <div class="container">
+
+                <header>
+                    <h2>Portfolio</h2>
+                </header>
+
+                <p style="text-align: left">I am a third year student studying data science and applied mathematics at
+                    the University of Michigan &mdash; Ann Arbor. My interest in web development began when I realized
+                    how limited Python
+                    and R is at
+                    displaying information.</p>
+                <p style="text-align: left">I have also picked up an interest in biology, specifically bioinformatics.
+                    My goal is to get
+                    a research position in either the biology or medical field with a primary focus in data and data
+                    anaylsis.</p>
+
+                <div class="row">
+                    <div class="col-4 col-12-mobile">
+                        <article class="item">
+                            <a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
+                            <header>
+                                <h3>Project 1</h3>
+                            </header>
+                        </article>
+                        <!-- <article class="item">
+                            <a href="#" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
+                            <header>
+                                <h3>Project 2</h3>
+                            </header>
+                        </article>
+                    </div>
+                    <div class="col-4 col-12-mobile">
+                        <article class="item">
+                            <a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a>
+                            <header>
+                                <h3>Project 3</h3>
+                            </header>
+                        </article>
+                        <article class="item">
+                            <a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a>
+                            <header>
+                                <h3>Project 4</h3>
+                            </header>
+                        </article>
+                    </div>
+                    <div class="col-4 col-12-mobile">
+                        <article class="item">
+                            <a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
+                            <header>
+                                <h3>Project 5</h3>
+                            </header>
+                        </article>
+                        <article class="item">
+                            <a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
+                            <header>
+                                <h3>Project 6</h3>
+                            </header>
+                        </article> -->
+                    </div>
+                </div>
+                <br /> <br />
+                <header id="languages">
+                    <h2>Languages</h2>
+                </header>
+                
+                {% for skill in skills %}
+                <div class="languages">
+                    <article class="item">
+                        <div class="language">
+                            <div class="center--wrapper">
+                                <figure class="language--wrapper">
+                                    <img src="{{skill.filelink}}"
+                                        alt="{{skill.language}} Logo" class="language__img" />
+                                    <figcaption class="language__name">{{skill.language}}</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <h3 class="lang-time">{{skill.time}}</h3>
+                        <h3 class="lang-prof">{{skill.proficiency}}</h3>
+                    </article>
+                    <div class="meter red">
+                        <span style="width: {{skill.meter}}%"></span>
+                    </div>
+                    {% if skill.framework is defined %}
+                    <p class="lang-framework"><strong>Frameworks: </strong>{{skill.framework}}</p>
+                    {% endif %}
+                    <p class="lang-desc">{{skill.description}}</p>
+                </div>
+                {% endfor %}
+
+            </div>
+        </section>
+
+        <!-- About Me -->
+        <section id="about" class="three">
+            <div class="container">
+
+                <header>
+                    <h2>About Me</h2>
+                </header>
+
+                <div class="education">
+                    <a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
+                    <span>Education</span>
+                </div>
+
+                <p>Personal information about me or something.</p>
+
+            </div>
+
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="four">
+            <div class="container">
+
+                <header>
+                    <h2>Contact</h2>
+                </header>
+
+                <p>Is this needed?</p>
+                <p>Test if this works after deploying.</p>
+
+                <!-- https://docs.google.com/forms/d/e/1FAIpQLSdw2V1P1AXLcFUZuP8C3VjrwD37KlyP7-1VhE9xNgk8qzRWfQ/viewform?usp=pp_url&entry.1689097801=kenny&entry.876595515=kngo@umich.edu&entry.307990038=hello!+this+is+a+message+from+your+website -->
+
+                <!-- https://docs.google.com/forms/d/e/1FAIpQLSdw2V1P1AXLcFUZuP8C3VjrwD37KlyP7-1VhE9xNgk8qzRWfQ/viewform?&entry.1689097801=kenny&entry.876595515=kngo@umich.edu&entry.307990038=hello!+this+is+a+message+from+your+website -->
+
+                <form name="gform" id="gform" enctype="text/plain"
+                    action="https://docs.google.com/forms/d/e/1FAIpQLSdw2V1P1AXLcFUZuP8C3VjrwD37KlyP7-1VhE9xNgk8qzRWfQ/formResponse?"
+                    target="hidden_iframe" onsubmit="submitted=true;" method="post">
+                    <div class="row">
+                        <div class="col-6 col-12-mobile"><input type="text" name="entry.1689097801"
+                                id="entry.1689097801" placeholder="Name" required />
+                        </div>
+                        <div class="col-6 col-12-mobile"><input type="text" name="entry.876595515" id="entry.876595515"
+                                placeholder="Email" required />
+                        </div>
+                        <div class="col-12">
+                            <textarea name="entry.307990038" id="entry.307990038" placeholder="Message"
+                                required /></textarea>
+                        </div>
+                        <div class="col-12">
+                            <input type="submit" value="Submit" />
+                        </div>
+                    </div>
+                </form>
+                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+                    onload="if(submitted) {}"></iframe>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+
+        <!-- Copyright -->
+        <ul class="copyright">
+            <li>&copy; Untitled. All rights reserved.</li>
+            <li>Template Design: <a href="https://html5up.net/prologue" target="_blank">HTML5 UP</a></li>
+        </ul>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- for email submission form -->
+    <script type="text/javascript">
+        var submitted = false;
+    </script>
+    <script type="text/javascript">
+        $('#gform').on('submit', function (e) {
+            $('#gform *').fadeOut(2000);
+            $('#gform').prepend('Your email has been sent...\nProbably change this too');
+        });
+    </script>
+
+</body>
+
+</html>

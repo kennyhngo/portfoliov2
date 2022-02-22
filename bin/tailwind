@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Run the CLI tool to scan template files for classes and build your CSS.
+npx tailwindcss -i ./assets/css/mycss.css -o ./dist/output.css --watch
