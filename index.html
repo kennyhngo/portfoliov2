@@ -372,8 +372,16 @@
                 <!-- <form name="gform" id="gform" enctype="text/plain"
                     action="https://docs.google.com/forms/d/e/1FAIpQLSdw2V1P1AXLcFUZuP8C3VjrwD37KlyP7-1VhE9xNgk8qzRWfQ/formResponse?"
                     target="hidden_iframe" onsubmit="submitted=true;", method="POST"> -->
+
+                <!-- Scripts -->
+                <!-- for email submission form -->
+                <script src="assets/js/jquery.min.js"></script>
+                <script type="text/javascript">
+                    var submitted = false;
+                </script>
+
                 <form name="gform" id="gform" enctype="text/plain" target="hidden_iframe"
-                    onsubmit="submitted=true; postIt()" , method="POST">
+                    onsubmit="submitted=true; postIt();" , method="post">
                     <div class="row">
                         <div class="col-6 col-12-mobile"><input type="text" name="entry.1689097801"
                                 id="entry.1689097801" placeholder="Name" required />
@@ -410,7 +418,7 @@
     </div>
 
     <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
+    <!-- <script src="assets/js/jquery.min.js"></script> -->
     <script src="assets/js/jquery.scrolly.min.js"></script>
     <script src="assets/js/jquery.scrollex.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
@@ -419,9 +427,6 @@
     <script src="assets/js/main.js"></script>
 
     <!-- for email submission form -->
-    <script type="text/javascript">
-        var submitted = false;
-    </script>
     <script type="text/javascript">
         $('#gform').on('submit', function (e)
         {
