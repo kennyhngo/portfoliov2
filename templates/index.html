@@ -205,11 +205,20 @@
 
                 <!-- https://docs.google.com/forms/d/e/1FAIpQLSdw2V1P1AXLcFUZuP8C3VjrwD37KlyP7-1VhE9xNgk8qzRWfQ/viewform?usp=pp_url&entry.1689097801=Kenny&entry.876595515=kenny19ngo@gmail.com&entry.307990038=this+is+a+long+text -->
 
+                <!-- https://docs.google.com/forms/u/0/d/e/1FAIpQLSdw2V1P1AXLcFUZuP8C3VjrwD37KlyP7-1VhE9xNgk8qzRWfQ/formResponse
+                -->
+
                 <!-- <form name="gform" id="gform" enctype="text/plain"
                     action="https://docs.google.com/forms/d/e/1FAIpQLSdw2V1P1AXLcFUZuP8C3VjrwD37KlyP7-1VhE9xNgk8qzRWfQ/formResponse?"
                     target="hidden_iframe" onsubmit="submitted=true;", method="POST"> -->
 
-                <form name="gform" id="gform" enctype="text/plain" target="hidden_iframe"
+                <!-- 
+                https://docs.google.com/forms/d/e/1FAIpQLSdw2V1P1AXLcFUZuP8C3VjrwD37KlyP7-1VhE9xNgk8qzRWfQ/viewform?usp=pp_url&entry.1689097801=random+name&entry.876595515=random+email&entry.307990038=random+message
+                -->
+                    
+                <form
+                    action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdw2V1P1AXLcFUZuP8C3VjrwD37KlyP7-1VhE9xNgk8qzRWfQ/formResponse"
+                    name="gform" id="gform" enctype="text/plain" target="hidden_iframe"
                     onsubmit="submitted=true; postIt();" method="post">
                     <div class="row">
                         <div class="col-6 col-12-mobile"><input type="text" name="entry.1689097801"
@@ -219,7 +228,7 @@
                                 placeholder="Email" required />
                         </div>
                         <div class="col-12">
-                            <textarea name="entry.307990038" id="entry.307990038" placeholder="Message"
+                            <textarea form="gform" name="entry.307990038" id="entry.307990038" placeholder="Message"
                                 required ></textarea>
                         </div>
                         <div class="col-12">
@@ -271,7 +280,7 @@
         {
             let ele = document.getElementById('gform');
             let serr = $("form").serialize();
-            ele.action = `https://docs.google.com/forms/d/e/1FAIpQLSdw2V1P1AXLcFUZuP8C3VjrwD37KlyP7-1VhE9xNgk8qzRWfQ/formResponse?${serr}`
+            ele.action = `https://docs.google.com/forms/u/0/d/e/1FAIpQLSdw2V1P1AXLcFUZuP8C3VjrwD37KlyP7-1VhE9xNgk8qzRWfQ/formResponse${serr}`
         }
     </script>
 
